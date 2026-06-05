@@ -12,7 +12,7 @@
 
 cask "shadowtype" do
   version "0.2.1"
-  sha256 "1c35f78843e0e255462ccf2778476691e127bfd0fdc2fd3d3776b67c1153e736"
+  sha256 "f22bab45957a08a48bfd3b0b8fe125a5198f32fe1b01bb73127004f3547a10d8"
 
   url "https://github.com/dario-valles/shadowtype-mac/releases/download/v#{version}/Shadowtype-#{version}.zip",
       verified: "github.com/dario-valles/shadowtype-mac/"
