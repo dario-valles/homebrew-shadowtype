@@ -13,8 +13,8 @@
 #   shasum -a 256 Shadowtype.dmg
 
 cask "shadowtype" do
-  version "0.6.1"
-  sha256 "c91b3188a3d67fad11bf26dc92c9b89b040c5c68758b8cf2deb29ef037a9552d"
+  version "0.6.2"
+  sha256 "e9593cc12077aaf25a316f6dd1650a2917654696ce97c211e615e5a4d51cab7d"
 
   url "https://github.com/dario-valles/shadowtype/releases/download/v#{version}/Shadowtype.dmg"
   name "Shadowtype"
