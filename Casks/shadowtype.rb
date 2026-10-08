@@ -4,31 +4,33 @@
 # star/notability gate — unlike submitting to homebrew/homebrew-cask, which
 # requires the app repo to clear 75+ stars first.
 #
-# Artifact is the GitHub Release asset (stable public URL). Shadowtype also
-# self-updates in-app from dl.shadowtype.app, so `auto_updates true`.
+# Artifact is the notarized DMG attached to the GitHub Release (stable public
+# URL). Shadowtype also self-updates in-app from the release's signed
+# latest.json, so `auto_updates true`.
 #
-# On a new release, bump `version` and `sha256`:
-#   shasum -a 256 Shadowtype-<version>.zip
+# On a new release, bump `version` and `sha256` (scripts/release.sh does this
+# when TAP_REPO/TAP_DIR are set):
+#   shasum -a 256 Shadowtype.dmg
 
 cask "shadowtype" do
-  version "0.2.1"
-  sha256 "f22bab45957a08a48bfd3b0b8fe125a5198f32fe1b01bb73127004f3547a10d8"
+  version "0.6.1"
+  sha256 "c91b3188a3d67fad11bf26dc92c9b89b040c5c68758b8cf2deb29ef037a9552d"
 
-  url "https://github.com/dario-valles/shadowtype-mac/releases/download/v#{version}/Shadowtype-#{version}.zip",
-      verified: "github.com/dario-valles/shadowtype-mac/"
+  url "https://github.com/dario-valles/shadowtype/releases/download/v#{version}/Shadowtype.dmg",
+      verified: "github.com/dario-valles/shadowtype/"
   name "Shadowtype"
-  desc "Private, on-device AI autocomplete for macOS"
+  desc "Private, on-device AI autocomplete"
   homepage "https://shadowtype.app/"
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
   depends_on arch: :arm64
+  depends_on macos: :sonoma
 
   app "Shadowtype.app"
 
   zap trash: [
     "~/Library/Application Support/Shadowtype",
-    "~/Library/Caches/app.shadowtype",
-    "~/Library/Preferences/app.shadowtype.plist",
+    "~/Library/Caches/com.shadowtype.app",
+    "~/Library/Preferences/com.shadowtype.app.plist",
   ]
 end
