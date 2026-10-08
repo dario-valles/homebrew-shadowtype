@@ -16,8 +16,7 @@ cask "shadowtype" do
   version "0.6.1"
   sha256 "c91b3188a3d67fad11bf26dc92c9b89b040c5c68758b8cf2deb29ef037a9552d"
 
-  url "https://github.com/dario-valles/shadowtype/releases/download/v#{version}/Shadowtype.dmg",
-      verified: "github.com/dario-valles/shadowtype/"
+  url "https://github.com/dario-valles/shadowtype/releases/download/v#{version}/Shadowtype.dmg"
   name "Shadowtype"
   desc "Private, on-device AI autocomplete"
   homepage "https://shadowtype.app/"
